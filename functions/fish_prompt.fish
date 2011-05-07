@@ -1,9 +1,9 @@
 function fish_prompt
-	set cmdcount (math $cmdcount+1)
-	printf '[%d] ' $cmdcount
+	printf '[%s@%s] ' (echo $USERNAME) (cat /etc/hostname)
 	if test -d .git
-		printf '%s%s %s(%s)%s>: ' (set_color red) (pwd) (set_color blue) (git branch | grep "*" | awk -F" " '{print $2}') (set_color normal)
+		printf '%s%s %s(%s)' (set_color red) (pwd) (set_color blue) (git branch | grep "*" | awk -F" " '{print $2}')
 	else
-		printf '%s%s%s>: ' (set_color red) (pwd) (set_color normal)
+		printf '%s%s' (set_color red) (pwd)
 	end
+	printf '%s>: ' (set_color normal)
 end
