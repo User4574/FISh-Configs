@@ -5,5 +5,9 @@ function fish_prompt
 	printf '%s%s%s' (set_color green) (cat /etc/hostname) (set_color normal)
 	printf '] '
 	printf '%s%s' (set_color red) (pwd)
-	printf '%s>: ' (set_color normal)
+	if git status >/dev/null ^/dev/null
+		printf '%s {%s}>: ' (set_color normal) (git branch | awk -F\  '{print $2}')
+	else
+		printf '%s>: ' (set_color normal)
+	end
 end
