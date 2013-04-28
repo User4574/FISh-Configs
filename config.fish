@@ -1,9 +1,11 @@
 alias she='ssh njel500@milan.cs.york.ac.uk'
 alias sft='sftp njel500@milan.cs.york.ac.uk'
 alias shx='ssh -YC njel500@milan.cs.york.ac.uk'
-alias pcorr='chmod -R a+rX,u+w .'
-alias 4574='ssh nathan@4574.co.uk'
 
-set -x PATH /home/nathan/bin $PATH /opt/android-sdk-linux_x86/platform-tools/
+alias what='ps -ef'
+alias when='uptime'
+
+set -x PATH /home/nathan/bin $PATH /opt/adk/platform-tools
 set -x EDITOR vim
 set -x CDPATH '.'
+set -x STEAM_FRAME_FORCE_CLOSE 1
